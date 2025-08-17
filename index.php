@@ -16,13 +16,19 @@ $select->execute([
 
 $row = $select->fetch(PDO::FETCH_ASSOC);
 
-if($row['useremail']==$useremail AND $row['userpassword']==$password){
+if(is_array($row)){
 
-echo $success="Login Successful! Redirecting to dashboard...";
-header("Refresh: 1;ui/dashboard.php");
+    if($row['useremail']==$useremail AND $row['userpassword']==$password){
+
+    echo $success="Login Successful! Redirecting to dashboard...";
+    header("Refresh: 1;ui/dashboard.php");
+    }
+
 }else{
-echo $error="Login Failed! Please check your email and password.";
+  echo $error="Login Failed! Please check your email and password.";
 }
+
+
 
 }
 
