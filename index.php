@@ -22,6 +22,9 @@ if(is_array($row)){
 
     echo $success="Login Successful! Redirecting to dashboard...";
     header("Refresh: 1;ui/dashboard.php");
+    }else if($row['useremail']==$usermail and $row['userpassword']==$password and $row ['role']=="Admin"){
+        echo $success="login sucess by user";
+        header('refresh: 1;ui/user.php');
     }
 
 }else{
