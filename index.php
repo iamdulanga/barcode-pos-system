@@ -27,6 +27,11 @@ if(is_array($row)){
         header('refresh: 1;ui/user.php');
     }
 
+$_SESSION['userid']=$row['userid'];
+$_SESSION['username']=$row['username'];
+$_SESSION['useremail']=$row['useremail'];
+$_SESSION['role']=$row['role'];
+
 }else{
   echo $error="Login Failed! Please check your email and password.";
 }

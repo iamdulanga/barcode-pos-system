@@ -1,5 +1,14 @@
 <?php
+
+include_once("connectdb.php");
+session_start();
+
+if($_SESSION["useremail"]==""){
+    header("location:../index.php");
+}
+
 include_once "header.php";
+
 ?>
 
 <!-- Content Wrapper. Contains page content -->
